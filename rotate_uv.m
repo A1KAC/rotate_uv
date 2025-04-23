@@ -36,5 +36,7 @@
 %   [ cosd(theta)  -sind(theta)
 %     sind(theta)   cosd(theta) ]
 
-rotate_uv = @(u, v, theta) [u * cosd(theta) - v * sind(theta), ...  % U verdadero
-                            u * sind(theta) + v * cosd(theta)];     % V verdadero
+function [u_corr, v_corr] = rotate_uv(u, v, theta)
+    u_corr = u * cosd(theta) - v * sind(theta);
+    v_corr = u * sind(theta) + v * cosd(theta);
+end
